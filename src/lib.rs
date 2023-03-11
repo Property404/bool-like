@@ -1,7 +1,12 @@
-//! A crate that implements `core::ops::Not`, `core::convert::From<Bool>`, and
-//! `core::convert::Into<Bool>` for two-variant enums.
+//! This crate contains an attribute macro `#[bool_like]`. By default, this macro just implements
+//! [core::ops::Not] for a simple two-variant enum. `!` applied to one variant will produce the
+//! other.
 //!
-//! A chess piece color is a good use case for a two-variant enum. The `core::ops::Not`
+//! Optionally, the sub-attribute `#[into_false]` may be applied to one of the variants to indicate
+//! that variant is equivalent to `false`, and the other variant is equivalent to `true`.
+//! [core::convert::From] will be implemented for both the enum and `bool`.
+//!
+//! A chess piece color is a good use case for a two-variant enum. The [core::ops::Not]
 //! implementation can be treated as if it were a bool, because you know you will never have more
 //! than two players in Chess (unless you frequent /r/anarchychess)
 //! ```
