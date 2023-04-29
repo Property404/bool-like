@@ -27,8 +27,8 @@ fn test_into_from_bool() {
     assert_eq!(!Answer::Yes, Answer::No);
     assert_eq!(!Answer::No, Answer::Yes);
 
-    assert_eq!(bool::from(Answer::No), false);
-    assert_eq!(bool::from(Answer::Yes), true);
+    assert!(!bool::from(Answer::No));
+    assert!(bool::from(Answer::Yes));
 
     assert_eq!(Answer::from(false), Answer::No);
     assert_eq!(Answer::from(true), Answer::Yes);

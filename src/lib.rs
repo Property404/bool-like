@@ -47,8 +47,8 @@
 //! assert_eq!(Answer::Yes, Answer::from(true));
 //!
 //! // `core::convert::From<Answer>` is implemented for bool
-//! assert_eq!(bool::from(Answer::No), false);
-//! assert_eq!(bool::from(Answer::Yes), true);
+//! assert!(!bool::from(Answer::No));
+//! assert!(bool::from(Answer::Yes));
 //! ```
 
 use proc_macro::TokenStream;

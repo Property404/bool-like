@@ -22,7 +22,7 @@ enum Answer {
 }
 
 assert_eq!(! Answer::No, Answer::Yes);
-assert_eq!(bool::from(Answer::Yes), true);
+assert!(bool::from(Answer::Yes));
 ```
 
 ## License
